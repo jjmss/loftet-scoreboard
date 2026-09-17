@@ -435,11 +435,12 @@ input[type="text"]:focus {
   transform: translateX(-50%);
   background: var(--kiwi);
   color: white;
-  padding: 10px 16px;
+  padding: 12px 18px;
   border-radius: 999px;
   font-weight: 700;
-  z-index: 10;
+  z-index: 40;
   box-shadow: var(--shadow);
+  white-space: nowrap;
 }
 
 .empty {

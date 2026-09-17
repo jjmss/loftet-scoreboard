@@ -100,7 +100,7 @@ export default function App() {
   function showToast(text: string) {
     setToast(text);
     window.clearTimeout(toastTimer.current);
-    toastTimer.current = window.setTimeout(() => setToast(""), 1800);
+    toastTimer.current = window.setTimeout(() => setToast(""), 2800);
   }
 
   async function register(event: FormEvent) {
@@ -295,7 +295,7 @@ export default function App() {
                 </p>
                 <p className="muted">{row.tickets === 1 ? "1 lodd" : `${row.tickets} lodd`}</p>
               </div>
-              <div className="lodd">🎟 {row.tickets}</div>
+              <div className="lodd">{row.tickets}</div>
             </article>
           ))}
           {!state?.leaderboard.length ? <p className="empty">Ingen er registrert ennå.</p> : null}
@@ -356,8 +356,9 @@ export default function App() {
           </button>
           {state?.latestSpin ? (
             <p className="muted" style={{ textAlign: "center", marginTop: 14 }}>
-              Sist vant {state.latestSpin.winnerName} · {formatWhen(state.latestSpin.spunAt)} ·{" "}
-              {state.latestSpin.attendeeNames.length} til stede
+              Sist vant <b>{state.latestSpin.winnerName}</b>
+              <br />
+              {formatWhen(state.latestSpin.spunAt)} · {state.latestSpin.attendeeNames.length} til stede
             </p>
           ) : null}
         </section>

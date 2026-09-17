@@ -64,7 +64,6 @@ export function Wheel({ names, rotation, spinning }: Props) {
                   fontWeight={700}
                   textAnchor="middle"
                   dominantBaseline="middle"
-                  transform={`rotate(${start + slice / 2} ${mid.x} ${mid.y})`}
                 >
                   {name.length > 10 ? `${name.slice(0, 9)}…` : name}
                 </text>
