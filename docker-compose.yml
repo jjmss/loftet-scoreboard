@@ -1,0 +1,16 @@
+services:
+  loftet:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: "3000"
+      DATABASE_PATH: /data/loftet.db
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      FRONTEND_DIST: /app/public
+    volumes:
+      - loftet-data:/data
+    restart: unless-stopped
+
+volumes:
+  loftet-data:
